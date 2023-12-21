@@ -1,0 +1,2013 @@
+{
+	"info": {
+		"_postman_id": "d8c725f7-6435-4e1f-86b7-a6c0ea84e1ac",
+		"name": "Anket",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23460183"
+	},
+	"item": [
+		{
+			"name": "0 - 0 - Anasayfa",
+			"item": [
+				{
+					"name": "Anasayfa - Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						},
+						"description": "http://localhost:3000/"
+					},
+					"response": []
+				},
+				{
+					"name": "URL Veri Alma",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/getId/8989/getPage/34",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getId",
+								"8989",
+								"getPage",
+								"34"
+							]
+						},
+						"description": "{{url}}/info"
+					},
+					"response": []
+				},
+				{
+					"name": "Params",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/params?id=4&token=sdfa3&geo=us",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"params"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "4"
+								},
+								{
+									"key": "token",
+									"value": "sdfa3"
+								},
+								{
+									"key": "geo",
+									"value": "us"
+								}
+							]
+						},
+						"description": "http://localhost:3000/env"
+					},
+					"response": []
+				},
+				{
+					"name": "Env",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/env",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"env"
+							]
+						},
+						"description": "http://localhost:3000/env"
+					},
+					"response": []
+				},
+				{
+					"name": "Version",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/version",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"version"
+							]
+						},
+						"description": "{{url}}/version"
+					},
+					"response": []
+				},
+				{
+					"name": "Proje - Bilgileri",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/info",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"info"
+							]
+						},
+						"description": "{{url}}/info"
+					},
+					"response": []
+				},
+				{
+					"name": "Html",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/html",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"html"
+							]
+						},
+						"description": "{{url}}/info"
+					},
+					"response": []
+				},
+				{
+					"name": "Anasayfa - Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"enes\",\r\n    \"surname\":\"yildirim\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "0 - 1 - Token",
+			"item": [
+				{
+					"name": "Token Oluşturma",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":11214,\n    \"name\":\"enes test\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/token_create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"token_create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Token Çözme",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEyMTQsIm5hbWUiOiJlbmVzIHRlc3QiLCJpYXQiOjE3MDMwNzExOTV9.hxQHKNPTdKX8ty0Av47a4zPjJyxuTHt17VNnFmrr9a4\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/token_decode",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"token_decode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bearer Token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "abcToken",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"enes\",\n    \"surname\":\"yildirim\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/bearer_token",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bearer_token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "0 - 2 - Api",
+			"item": [
+				{
+					"name": "Service - Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/service/get",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"service",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Service - Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/service/post",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"service",
+								"post"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "1 - 0 - Kullanıcı",
+			"item": [
+				{
+					"name": "Users - Tüm Veriler",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/users/all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"all"
+							]
+						},
+						"description": "{{url}}/api/ssk/all"
+					},
+					"response": []
+				},
+				{
+					"name": "Users - Tüm Veriler - Params",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/users/all?page=2&rowcount=4&order=asc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"all"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "rowcount",
+									"value": "4"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						},
+						"description": "{{url}}/api/ssk/all"
+					},
+					"response": []
+				},
+				{
+					"name": "Users - Tüm Veriler - Params 2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/users/all?order=asc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"all"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						},
+						"description": "{{url}}/api/ssk/all"
+					},
+					"response": []
+				},
+				{
+					"name": "Users - Arama",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/users/find/10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"find",
+								"10"
+							]
+						},
+						"description": "{{url}}/api/ssk/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Users - Arama - Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/users/find_post",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"find_post"
+							]
+						},
+						"description": "{{url}}/api/ssk/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Users - Arama - Kullanıcı",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"created_byId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/users/find_user?page=1&rowcount=4&order=asc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"find_user"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "rowcount",
+									"value": "4"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						},
+						"description": "{{url}}/api/ssk/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Users - Veri Ekleme",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"User\",\r\n    \"surname\":\"Surname\",\r\n    \"email\": \"user@gmail.com\",\r\n    \"password\": \"123\",\r\n    \"repassword\": \"123\",\r\n    \"img_url\": null,\r\n    \"departman\": null,\r\n    \"role\": null,\r\n    \"created_byId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/users/add",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"add"
+							]
+						},
+						"description": "{{url}}/api/ssk/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Users - Veri Güncelleme",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"id\":5,\r\n    \"name\":\"name güncelleme\",\r\n    \"surname\":\"surname güncelleme\",\r\n    \"updated_byId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/users/edit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"edit"
+							]
+						},
+						"description": "{{url}}/api/ssk/update"
+					},
+					"response": []
+				},
+				{
+					"name": "Users - Çoklu Veri Güncelle",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "yildirimdev01",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\": \"4,6\",\r\n    \"name\":\"name güncelleme\",\r\n    \"surname\":\"surname güncelleme\",\r\n    \"updated_byId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/users/edit/multi",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"edit",
+								"multi"
+							]
+						},
+						"description": "{{url}}/api/ssk/delete"
+					},
+					"response": []
+				},
+				{
+					"name": "Users - Veri Silme",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deleted_byId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/users/delete/9",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"delete",
+								"9"
+							]
+						},
+						"description": "{{url}}/api/ssk/delete"
+					},
+					"response": []
+				},
+				{
+					"name": "Users - Çoklu Veri Silme",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "yildirimdev01",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\": \"8,7,6\",\r\n    \"deleted_byId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/users/delete/multi",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"delete",
+								"multi"
+							]
+						},
+						"description": "{{url}}/api/ssk/delete"
+					},
+					"response": []
+				},
+				{
+					"name": "Users - Geçisi Silme",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\":\"10\",\r\n    \"deleted_byId\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/users/delete/edit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"delete",
+								"edit"
+							]
+						},
+						"description": "{{url}}/api/ssk/delete"
+					},
+					"response": []
+				},
+				{
+					"name": "Users - Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/users/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						},
+						"description": "{{url}}/api/ssk/delete"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2 - 0 - Anket",
+			"item": [
+				{
+					"name": "Anket - Tüm Veriler",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/survey/all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"all"
+							]
+						},
+						"description": "{{url}}/api/ssk/all"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket - Tüm Veriler - Params",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/survey/all?page=2&rowcount=4&order=asc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"all"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "rowcount",
+									"value": "4"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						},
+						"description": "{{url}}/api/ssk/all"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket  - Tüm Veriler - Params 2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/survey/all?order=asc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"all"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						},
+						"description": "{{url}}/api/ssk/all"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket - Arama",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/survey/find/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"find",
+								"2"
+							]
+						},
+						"description": "{{url}}/api/ssk/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket - Detaylı Arama",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/survey/find/detail/31",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"find",
+								"detail",
+								"31"
+							]
+						},
+						"description": "{{url}}/api/ssk/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket - Arama - Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":50\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/find_post",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"find_post"
+							]
+						},
+						"description": "{{url}}/api/ssk/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket - Arama - Kullanıcı",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"created_byId\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/find_user?page=1&rowcount=4&order=asc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"find_user"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "rowcount",
+									"value": "4"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						},
+						"description": "{{url}}/api/ssk/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket - Veri Ekleme",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"title add\",\r\n    \"created_byId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/add",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"add"
+							]
+						},
+						"description": "{{url}}/api/ssk/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket - Veri Ekleme  - Seçenek",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Title\",\r\n    \"optionsData\": [\r\n      \"Seçenek 1\",  \r\n      \"Seçenek 2\",  \r\n      \"Seçenek 3\"  \r\n    ],\r\n    \"created_byToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ1c2VyQGdtYWlsLmNvbSIsImlhdCI6MTcwMzA3OTIyOX0.BkbTAFtpJlYBtDOLR2diF0YipECYeRkmIdA1q7Krk4Q\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/add/options",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"add",
+								"options"
+							]
+						},
+						"description": "{{url}}/api/ssk/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket - Veri Güncelleme",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"id\":2,\r\n    \"title\":\"title güncelleme\",\r\n    \"updated_byId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/edit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"edit"
+							]
+						},
+						"description": "{{url}}/api/ssk/update"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket - Veri Güncelleme Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"id\":31,\r\n    \"title\":\"title güncelleme\",\r\n    \"updated_byToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ1c2VyQGdtYWlsLmNvbSIsImlhdCI6MTcwMzA3OTIyOX0.BkbTAFtpJlYBtDOLR2diF0YipECYeRkmIdA1q7Krk4Q\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/edit/token",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"edit",
+								"token"
+							]
+						},
+						"description": "{{url}}/api/ssk/update"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket - Çoklu Veri Güncelle",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "yildirimdev01",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\": \"2,3\",\r\n    \"title\":\"title güncelleme\",\r\n    \"updated_byId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/edit/multi",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"edit",
+								"multi"
+							]
+						},
+						"description": "{{url}}/api/ssk/delete"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket - Veri Silme",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deleted_byId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/delete/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"delete",
+								"3"
+							]
+						},
+						"description": "{{url}}/api/ssk/delete"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket - Çoklu Veri Silme",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "yildirimdev01",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\": \"6,5\",\r\n    \"deleted_byId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/delete/multi",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"delete",
+								"multi"
+							]
+						},
+						"description": "{{url}}/api/ssk/delete"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket - Geçisi Silme",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\":\"4\",\r\n    \"deleted_byId\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/delete/edit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"delete",
+								"edit"
+							]
+						},
+						"description": "{{url}}/api/ssk/delete"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3 - 0 - Anket Seçenekleri",
+			"item": [
+				{
+					"name": "Anket Seçenekleri - Tüm Veriler",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/survey/options/all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"options",
+								"all"
+							]
+						},
+						"description": "{{url}}/api/ssk/all"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket Seçenekleri - Tüm Veriler - Params",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/survey/options/all?page=1&rowcount=4&order=asc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"options",
+								"all"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "rowcount",
+									"value": "4"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						},
+						"description": "{{url}}/api/ssk/all"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket Seçenekleri  - Tüm Veriler - Params 2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/survey/options/all?order=asc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"options",
+								"all"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						},
+						"description": "{{url}}/api/ssk/all"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket Seçenekleri - Arama",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/survey/options/find/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"options",
+								"find",
+								"4"
+							]
+						},
+						"description": "{{url}}/api/ssk/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket Seçenekleri - Arama - Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/options/find_post",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"options",
+								"find_post"
+							]
+						},
+						"description": "{{url}}/api/ssk/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket Seçenekleri - Arama - Kullanıcı",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"created_byId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/options/find_user?page=1&rowcount=4&order=asc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"options",
+								"find_user"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "rowcount",
+									"value": "4"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						},
+						"description": "{{url}}/api/ssk/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket Seçenekleri - Veri Ekleme",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"survey_id\":4,\r\n    \"title\":\"Seçenek 4 - 2\",\r\n    \"created_byId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/options/add",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"options",
+								"add"
+							]
+						},
+						"description": "{{url}}/api/ssk/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket Seçenekleri - Veri Ekleme Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"survey_id\":4,\r\n    \"title\":\"Seçenek 4 - 2\",\r\n    \"created_byToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ1c2VyQGdtYWlsLmNvbSIsImlhdCI6MTcwMzA3OTIyOX0.BkbTAFtpJlYBtDOLR2diF0YipECYeRkmIdA1q7Krk4Q\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/options/add/token",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"options",
+								"add",
+								"token"
+							]
+						},
+						"description": "{{url}}/api/ssk/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket Seçenekleri - Veri Güncelleme",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"id\":6,\r\n     //\"survey_id\":4,\r\n    \"title\":\"title güncelleme\",\r\n    \"updated_byId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/options/edit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"options",
+								"edit"
+							]
+						},
+						"description": "{{url}}/api/ssk/update"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket Seçenekleri - Çoklu Veri Güncelle",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "yildirimdev01",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\": \"5,4\",\r\n    \"title\":\"title güncelleme\",\r\n    \"updated_byId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/options/edit/multi",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"options",
+								"edit",
+								"multi"
+							]
+						},
+						"description": "{{url}}/api/ssk/delete"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket Seçenekleri - Veri Silme",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deleted_byId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/options/delete/6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"options",
+								"delete",
+								"6"
+							]
+						},
+						"description": "{{url}}/api/ssk/delete"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket Seçenekleri - Çoklu Veri Silme",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "yildirimdev01",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\": \"8,7,6\",\r\n    \"deleted_byId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/options/delete/multi",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"options",
+								"delete",
+								"multi"
+							]
+						},
+						"description": "{{url}}/api/ssk/delete"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket Seçenekleri - Geçisi Silme",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\":\"5\",\r\n    \"deleted_byId\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/options/delete/edit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"options",
+								"delete",
+								"edit"
+							]
+						},
+						"description": "{{url}}/api/ssk/delete"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "4 - 0 - Anket Oylaması",
+			"item": [
+				{
+					"name": "Anket Oylaması - Tüm Veriler",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/survey/voter/all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"voter",
+								"all"
+							]
+						},
+						"description": "{{url}}/api/ssk/all"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket Oylaması - Tüm Veriler - Params",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/survey/voter/all?page=1&rowcount=4&order=asc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"voter",
+								"all"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "rowcount",
+									"value": "4"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						},
+						"description": "{{url}}/api/ssk/all"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket Oylaması  - Tüm Veriler - Params 2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/survey/voter/all?order=asc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"voter",
+								"all"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						},
+						"description": "{{url}}/api/ssk/all"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket Oylaması - Arama",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/survey/voter/find/6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"voter",
+								"find",
+								"6"
+							]
+						},
+						"description": "{{url}}/api/ssk/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket Oylaması - Arama - Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/voter/find_post",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"voter",
+								"find_post"
+							]
+						},
+						"description": "{{url}}/api/ssk/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket Oylaması - Arama - Kullanıcı",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"created_byId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/voter/find_user?page=1&rowcount=4&order=asc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"voter",
+								"find_user"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "rowcount",
+									"value": "4"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						},
+						"description": "{{url}}/api/ssk/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket Oylaması - Veri Ekleme",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"survey_id\":2,\r\n    \"options_id\":11,\r\n    \"voter_id\":4,\r\n    \"created_byId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/voter/add",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"voter",
+								"add"
+							]
+						},
+						"description": "{{url}}/api/ssk/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket Oylaması - Veri Ekleme Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"survey_id\":2,\r\n    \"options_id\":1,\r\n    \"voter_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ1c2VyQGdtYWlsLmNvbSIsImlhdCI6MTcwMzA3OTIyOX0.BkbTAFtpJlYBtDOLR2diF0YipECYeRkmIdA1q7Krk4Q\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/voter/add/token",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"voter",
+								"add",
+								"token"
+							]
+						},
+						"description": "{{url}}/api/ssk/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket Oylaması - Veri Güncelleme",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"id\":4,\r\n     //\"survey_id\":4,\r\n    \"options_id\":4,\r\n    \"voter_id\":5,\r\n    \"updated_byId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/voter/edit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"voter",
+								"edit"
+							]
+						},
+						"description": "{{url}}/api/ssk/update"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket Oylaması - Çoklu Veri Güncelle",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "yildirimdev01",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\": \"5,4\",\r\n     //\"survey_id\":4,\r\n    \"options_id\":4,\r\n    \"voter_id\":5,\r\n    \"updated_byId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/voter/edit/multi",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"voter",
+								"edit",
+								"multi"
+							]
+						},
+						"description": "{{url}}/api/ssk/delete"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket Oylaması - Veri Silme",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deleted_byId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/voter/delete/10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"voter",
+								"delete",
+								"10"
+							]
+						},
+						"description": "{{url}}/api/ssk/delete"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket Oylaması - Çoklu Veri Silme",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "yildirimdev01",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\": \"8,7\",\r\n    \"deleted_byId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/voter/delete/multi",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"voter",
+								"delete",
+								"multi"
+							]
+						},
+						"description": "{{url}}/api/ssk/delete"
+					},
+					"response": []
+				},
+				{
+					"name": "Anket Oylaması - Geçisi Silme",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\":\"6\",\r\n    \"deleted_byId\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/survey/voter/delete/edit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"survey",
+								"voter",
+								"delete",
+								"edit"
+							]
+						},
+						"description": "{{url}}/api/ssk/delete"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
